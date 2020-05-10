@@ -24,9 +24,11 @@ namespace Game_of_stones
             double l = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("");
             Console.WriteLine("Решение: ");
-            FirstTask p = new FirstTask();
-            p.FindS(k, n, m, l);
-            p.ShowStrategy(n, m, l);
+            FirstTask f = new FirstTask();
+            f.FindS(k, n, m, l);
+            f.ShowStrategy(n, m, l);
+            SecondTask s = new SecondTask();
+            s.CreateGraph(k, n, m, l);
         }
     }
 }
