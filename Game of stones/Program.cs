@@ -15,13 +15,17 @@ namespace Game_of_stones
             Console.WriteLine("");
             Console.WriteLine("Условия:");
             Console.Write("Количество камней для победы (<k>) = ");
-            int k = Convert.ToInt32(Console.ReadLine());
+            double k = Convert.ToDouble(Console.ReadLine());
             Console.Write("Количество камней, которое можно добавить в кучу(<n>) = ");
             int n = Convert.ToInt32(Console.ReadLine());
             Console.Write("Другое количество камней, которое можно добавить в кучу(<m>) = ");
             int m = Convert.ToInt32(Console.ReadLine());
             Console.Write("Во сколько раз можно увеличить количество камней в куче(<l>): ");
-            int l = Convert.ToInt32(Console.ReadLine());
+            double l = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("");
+            Console.WriteLine("Решение: ");
+            FirstTask T = new FirstTask();
+            T.FindS(k, n, m, l);
         }
     }
 }
