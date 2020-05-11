@@ -23,7 +23,7 @@ namespace Game_of_stones
             Console.WriteLine("");
             Console.WriteLine("Условия:");
             Console.Write("Количество камней для победы (<k>) = ");
-            int k = Convert.ToInt32(Console.ReadLine());
+            double k = Convert.ToDouble(Console.ReadLine());
 
             String pattern = @"([+*])+(\d+)";
 
@@ -69,9 +69,10 @@ namespace Game_of_stones
             Console.WriteLine("");
             Console.WriteLine("Решение: ");
             //FirstTask f = new FirstTask();
-            //f.FindS(k, a, b);
+            //f.FindSForWin(k, a, b);
             //f.ShowStrategy(n, m, l);
             UnnecessaryS.listOfS = new List<int>();
+            UnnecessaryS.listOfS2 = new List<int>();
             SecondTask s = new SecondTask();
             s.CreateGraph(k, a, b);            
         }

@@ -12,36 +12,37 @@ namespace Game_of_stones
         int s1;
         int s2;
         int[] a;
-
+        
         public FirstTask()
         {            
         }
 
-        //public void FindS(double k, double[] a, string[] b)
+        //public void FindS(double k, int[] a, string[] b)
         //{
-        //    double maxValue = a.Max();
-        //    int indexOfMaxValue = Array.IndexOf(a, maxValue);
-        //    string firstOperator = b[indexOfMaxValue];
-        //    if (firstOperator == "")
-        //    if (k > 0 && n > 0 && m > 0 && l > 0)
+        //    maxValue = a.Max();
+        //    indexOfMaxValue = Array.IndexOf(a, maxValue);
+        //    firstOperator = b[indexOfMaxValue];
+        //    if (firstOperator == "*")
         //    {
-        //        if (k % l == 0)
+        //        if(k % maxValue == 0)
         //        {
-        //            s = (int)(k / l) - 1;
+        //            s = (int)(k / maxValue) - 1;
         //        }
         //        else
         //        {
-        //            s = (int)Math.Ceiling(k / l) - 1;
+        //            s = (int)Math.Ceiling(k / maxValue) - 1;
         //        }
         //        s1 = s - n;
         //        s2 = s - m;
         //    }
         //    else
         //    {
-        //        s = 0;
+
+        //        s = (int)(k - maxValue) - 1;
         //    }
         //}
 
+        
         public void ShowStrategy(int n, int m, double l)
         {
             if (s != 0)

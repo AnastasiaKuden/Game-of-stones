@@ -15,7 +15,7 @@ namespace Game_of_stones
             stones = new List<int>();
         }
 
-        public void CreateGraph(int k, int[] a, string[] b)
+        public void CreateGraph(double k, int[] a, string[] b)
         {            
             for(int i = 1; i < k; i++)
             {

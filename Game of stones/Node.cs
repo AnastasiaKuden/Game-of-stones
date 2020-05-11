@@ -37,7 +37,7 @@ namespace Game_of_stones
             return newnode;
         }
 
-        public void CreateBranchesOfTurns(List<int> stones, int k, int[] a, string[] b)
+        public void CreateBranchesOfTurns(List<int> stones, double k, int[] a, string[] b)
         {
             foreach(int numberOfStones in stones)
             { 
@@ -87,10 +87,14 @@ namespace Game_of_stones
             }
             else
             {
-                if (values.Count == 3 || values.Count == 2)
+                if (values.Count == 2)
                 {
                     UnnecessaryS.listOfS.Add(values[0]);                                      
-                }                                      
+                }
+                else if (values.Count == 3)
+                {
+                    UnnecessaryS.listOfS2.Add(values[1]);
+                }
             }            
         }
 
