@@ -1,0 +1,13 @@
+D:\C# проекты\Game of stones\Game of stones\bin\Release\netcoreapp3.1\Game of stones.exe
+D:\C# проекты\Game of stones\Game of stones\bin\Release\netcoreapp3.1\Game of stones.deps.json
+D:\C# проекты\Game of stones\Game of stones\bin\Release\netcoreapp3.1\Game of stones.runtimeconfig.json
+D:\C# проекты\Game of stones\Game of stones\bin\Release\netcoreapp3.1\Game of stones.runtimeconfig.dev.json
+D:\C# проекты\Game of stones\Game of stones\bin\Release\netcoreapp3.1\Game of stones.dll
+D:\C# проекты\Game of stones\Game of stones\bin\Release\netcoreapp3.1\Game of stones.pdb
+D:\C# проекты\Game of stones\Game of stones\obj\Release\netcoreapp3.1\Game of stones.csprojAssemblyReference.cache
+D:\C# проекты\Game of stones\Game of stones\obj\Release\netcoreapp3.1\Game of stones.csproj.CoreCompileInputs.cache
+D:\C# проекты\Game of stones\Game of stones\obj\Release\netcoreapp3.1\Game of stones.AssemblyInfoInputs.cache
+D:\C# проекты\Game of stones\Game of stones\obj\Release\netcoreapp3.1\Game of stones.AssemblyInfo.cs
+D:\C# проекты\Game of stones\Game of stones\obj\Release\netcoreapp3.1\Game of stones.dll
+D:\C# проекты\Game of stones\Game of stones\obj\Release\netcoreapp3.1\Game of stones.pdb
+D:\C# проекты\Game of stones\Game of stones\obj\Release\netcoreapp3.1\Game of stones.genruntimeconfig.cache

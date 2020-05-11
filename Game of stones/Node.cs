@@ -7,7 +7,8 @@ namespace Game_of_stones
     public class Node
     {
         List<Node> nextNumber;
-        List<int> values;        
+        List<int> values;
+        int var1, var2, var3;
         
         public Node()
         {
@@ -36,20 +37,42 @@ namespace Game_of_stones
             return newnode;
         }
 
-        public void CreateBranchesOfTurns(List<int> stones, double k, int n, int m, double l)
+        public void CreateBranchesOfTurns(List<int> stones, double k, int[] a, string[] b)
         {
             foreach(int numberOfStones in stones)
-            {                
-                int var1 = numberOfStones + n;
-                int var2 = numberOfStones + m;
-                int var3 = numberOfStones * (int)l;                  
+            { 
+                if (b[0] == "+")
+                {
+                    var1 = numberOfStones + a[0];
+                }
+                else
+                {
+                    var1 = numberOfStones * a[0];
+                }
+                if (b[1] == "+")
+                {
+                    var2 = numberOfStones + a[1];
+                }
+                else
+                {
+                    var2 = numberOfStones * a[1];
+                }
+                if (b[2] == "+")
+                {
+                    var3 = numberOfStones + a[2];
+                }
+                else
+                {
+                    var3 = numberOfStones * a[2];
+                }
+                          
                 List<int> newNumberOfStones = CreateNewListOfStones(var1, var2, var3);
                 Node nN = CreateNewNode(numberOfStones);
                 if (numberOfStones >= (int)k)
                 {                   
                     continue;
                 }                
-                nN.CreateBranchesOfTurns(newNumberOfStones, k, n, m, l);                              
+                nN.CreateBranchesOfTurns(newNumberOfStones, k, a, b);                              
             }            
         }
 
@@ -67,7 +90,11 @@ namespace Game_of_stones
                 if (values.Count == 2)
                 {
                     UnnecessaryS.listOfS.Add(values[0]);                                      
-                }                                      
+                }
+                else if (values.Count == 3)
+                {
+                    UnnecessaryS.listOfS2.Add(values[1]);
+                }
             }            
         }
 
@@ -82,7 +109,7 @@ namespace Game_of_stones
             }
             else
             {
-                if (values.Count == 3 && !UnnecessaryS.listOfS.Contains(values[0]))
+                if (values.Count == 4 && !UnnecessaryS.listOfS.Contains(values[0]))
                 {
                     foreach (int s in values)
                     {

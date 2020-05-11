@@ -15,13 +15,13 @@ namespace Game_of_stones
             stones = new List<int>();
         }
 
-        public void CreateGraph(double k, int n, int m, double l)
+        public void CreateGraph(double k, int[] a, string[] b)
         {            
             for(int i = 1; i < k; i++)
             {
                 stones.Add(i);
             }
-            start.CreateBranchesOfTurns(stones, k, n, m, l);
+            start.CreateBranchesOfTurns(stones, k, a, b);
             start.Show();
             start.ShowSAndStrategy();
         }
