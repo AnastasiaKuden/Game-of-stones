@@ -7,9 +7,13 @@ namespace Game_of_stones
     {
         static void Main(string[] args)
         {
-            double n = 0;
-            double m = 0;
-            double l = 0;
+            int n = 0;
+            int m = 0;
+            int l = 0;
+            string nO = "+";
+            string mO = "+";
+            string lO = "+";            
+
             Console.WriteLine("Задача: Два игрока, Петя и Ваня, играют в следующую игру. Перед игроками лежит куча камней. Игроки ходят по очереди, первый ход делает Петя. За один ход игрок может добавить в кучу разное количество камней или увеличить кучу в некое количество раз (3 варианта): <n>, <m>, <l>. У каждого игрока есть необходимое количество камней, чтобы делать ходы. Игра завершается, когда количество камней в куче становится не менее <k>. Победителем считается игрок, сделавший последний ход, то есть первым получивший кучу, в которой будет <k> или больше камней. В начальный момент в куче было S камней (от одного, включительно, и меньше <k>).");
             Console.WriteLine("");
             Console.WriteLine("Введи свои условия и программа покажет: ");
@@ -19,21 +23,57 @@ namespace Game_of_stones
             Console.WriteLine("");
             Console.WriteLine("Условия:");
             Console.Write("Количество камней для победы (<k>) = ");
-            double k = Convert.ToDouble(Console.ReadLine());
-            Console.Write("1 вариант увеличения кучи (<n>) = ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            Console.Write("2 вариант увеличения кучи (<m>) = ");
-            int m = Convert.ToInt32(Console.ReadLine());
+            int k = Convert.ToInt32(Console.ReadLine());
+
+            String pattern = @"([+*])+(\d+)";
+
+            Console.Write("1 вариант увеличения кучи (<n>): ");
+            string firstvar = Console.ReadLine();
+            foreach (var expression in firstvar)
+            {
+                foreach (System.Text.RegularExpressions.Match r in
+                System.Text.RegularExpressions.Regex.Matches(firstvar, pattern))
+                {
+                    n = Int32.Parse(r.Groups[2].Value);
+                    nO = r.Groups[1].Value;
+                }
+            }
+
+            Console.Write("2 вариант увеличения кучи (<m>): ");
+            string secondvar = Console.ReadLine();
+            foreach (var expression in firstvar)
+            {
+                foreach (System.Text.RegularExpressions.Match r in
+                System.Text.RegularExpressions.Regex.Matches(secondvar, pattern))
+                {
+                    m = Int32.Parse(r.Groups[2].Value);
+                    mO = r.Groups[1].Value;
+                }
+            }
+
             Console.Write("3 вариант увеличения кучи (<l>): ");
-            double l = Convert.ToDouble(Console.ReadLine());
+            string thirdvar = Console.ReadLine();
+            foreach (var expression in thirdvar)
+            {
+                foreach (System.Text.RegularExpressions.Match r in
+                System.Text.RegularExpressions.Regex.Matches(thirdvar, pattern))
+                {
+                    l = Int32.Parse(r.Groups[2].Value);
+                    lO = r.Groups[1].Value;
+                }
+            }
+
+            int[] a = new int[3] { n, m, l };
+            string[] b = new string[3] { nO, mO, lO };
+           
             Console.WriteLine("");
             Console.WriteLine("Решение: ");
-            FirstTask f = new FirstTask();
-            f.FindS(k, n, m, l);
-            f.ShowStrategy(n, m, l);
+            //FirstTask f = new FirstTask();
+            //f.FindS(k, a, b);
+            //f.ShowStrategy(n, m, l);
             UnnecessaryS.listOfS = new List<int>();
             SecondTask s = new SecondTask();
-            s.CreateGraph(k, n, m, l);
+            s.CreateGraph(k, a, b);            
         }
     }
 }
