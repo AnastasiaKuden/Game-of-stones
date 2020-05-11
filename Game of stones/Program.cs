@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Game_of_stones
 {
@@ -27,6 +28,7 @@ namespace Game_of_stones
             FirstTask f = new FirstTask();
             f.FindS(k, n, m, l);
             f.ShowStrategy(n, m, l);
+            UnnecessaryS.listOfS = new List<int>();
             SecondTask s = new SecondTask();
             s.CreateGraph(k, n, m, l);
         }

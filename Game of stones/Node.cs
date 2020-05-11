@@ -4,17 +4,15 @@ using System.Text;
 
 namespace Game_of_stones
 {
-    class Node
+    public class Node
     {
         List<Node> nextNumber;
         List<int> values;        
-        List<int> S;
-
+        
         public Node()
         {
             nextNumber = new List<Node>();
-            values = new List<int>();
-            S = new List<int>();
+            values = new List<int>();            
         }
 
         public List<int> CreateNewListOfStones (int var1, int var2, int var3)
@@ -68,7 +66,7 @@ namespace Game_of_stones
             {
                 if (values.Count == 2)
                 {
-                    S.Add(values[0]);                    
+                    UnnecessaryS.listOfS.Add(values[0]);                                      
                 }                                      
             }            
         }
@@ -84,14 +82,14 @@ namespace Game_of_stones
             }
             else
             {
-                if (values.Count == 3 && //S.Contains(values[0]) == false) 
+                if (values.Count == 3 && !UnnecessaryS.listOfS.Contains(values[0]))
                 {
                     foreach (int s in values)
                     {
                         Console.Write(s + " ");
                     }
                     Console.WriteLine();
-                }                
+                }
             }
         }
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Game_of_stones
 {
-    class SecondTask
+    public class SecondTask
     {
         Node start;
         List<int> stones;
