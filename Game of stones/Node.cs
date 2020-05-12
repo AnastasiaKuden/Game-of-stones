@@ -81,8 +81,8 @@ namespace Game_of_stones
             if (nextNumber.Count != 0)
             {
                 foreach (Node n in nextNumber)
-                {
-                    n.Show();                            
+                {                    
+                    n.Show();                      
                 }
             }
             else
@@ -95,7 +95,8 @@ namespace Game_of_stones
                 {
                     UnnecessaryS.listOfS2.Add(values[1]);
                 }
-            }            
+            }
+            
         }
 
         public void ShowSAndStrategy()
@@ -109,8 +110,10 @@ namespace Game_of_stones
             }
             else
             {
-                if (values.Count == 4 && !UnnecessaryS.listOfS.Contains(values[0]))
+                if (values.Count == 3 && !UnnecessaryS.listOfS.Contains(values[0])) //&& !UnnecessaryS.listOfS2.Contains(values[1]))
                 {
+                    if (values[1] != )
+
                     foreach (int s in values)
                     {
                         Console.Write(s + " ");
