@@ -12,7 +12,9 @@ namespace Game_of_stones
             int l = 0;
             string nO = "+";
             string mO = "+";
-            string lO = "+";            
+            string lO = "+";
+            //List<int> a = new List<int>();
+            //List<string> b = new List<string>();
 
             Console.WriteLine("Задача: Два игрока, Петя и Ваня, играют в следующую игру. Перед игроками лежит куча камней. Игроки ходят по очереди, первый ход делает Петя. За один ход игрок может добавить в кучу разное количество камней или увеличить кучу в некое количество раз (3 варианта): <n>, <m>, <l>. У каждого игрока есть необходимое количество камней, чтобы делать ходы. Игра завершается, когда количество камней в куче становится не менее <k>. Победителем считается игрок, сделавший последний ход, то есть первым получивший кучу, в которой будет <k> или больше камней. В начальный момент в куче было S камней (от одного, включительно, и меньше <k>).");
             Console.WriteLine("");
@@ -35,7 +37,9 @@ namespace Game_of_stones
                 System.Text.RegularExpressions.Regex.Matches(firstvar, pattern))
                 {
                     n = Int32.Parse(r.Groups[2].Value);
+                    //a.Add(n);
                     nO = r.Groups[1].Value;
+                    //b.Add(nO);
                 }
             }
 
@@ -47,7 +51,9 @@ namespace Game_of_stones
                 System.Text.RegularExpressions.Regex.Matches(secondvar, pattern))
                 {
                     m = Int32.Parse(r.Groups[2].Value);
+                    //a.Add(m);
                     mO = r.Groups[1].Value;
+                    //b.Add(mO);
                 }
             }
 
@@ -59,7 +65,9 @@ namespace Game_of_stones
                 System.Text.RegularExpressions.Regex.Matches(thirdvar, pattern))
                 {
                     l = Int32.Parse(r.Groups[2].Value);
+                    //a.Add(l);
                     lO = r.Groups[1].Value;
+                    //b.Add(lO);
                 }
             }
 
@@ -68,13 +76,13 @@ namespace Game_of_stones
            
             Console.WriteLine("");
             Console.WriteLine("Решение: ");
-            //FirstTask f = new FirstTask();
-            //f.FindSForWin(k, a, b);
+            FirstTask f = new FirstTask();
+            //f.FindS(k, a, b);
             //f.ShowStrategy(n, m, l);
             UnnecessaryS.listOfS = new List<int>();
             UnnecessaryS.listOfS2 = new List<int>();
             SecondTask s = new SecondTask();
-            s.CreateGraph(k, a, b);            
+            s.CreateGraph(k, a, b);
         }
     }
 }

@@ -12,37 +12,62 @@ namespace Game_of_stones
         int s1;
         int s2;
         int[] a;
-        
+        List<int> newA = new List<int>();
+        List<string> newB = new List<string>();
+
         public FirstTask()
         {            
         }
 
-        //public void FindS(double k, int[] a, string[] b)
-        //{
-        //    maxValue = a.Max();
-        //    indexOfMaxValue = Array.IndexOf(a, maxValue);
-        //    firstOperator = b[indexOfMaxValue];
-        //    if (firstOperator == "*")
-        //    {
-        //        if(k % maxValue == 0)
-        //        {
-        //            s = (int)(k / maxValue) - 1;
-        //        }
-        //        else
-        //        {
-        //            s = (int)Math.Ceiling(k / maxValue) - 1;
-        //        }
-        //        s1 = s - n;
-        //        s2 = s - m;
-        //    }
-        //    else
-        //    {
+        public void FindS(double k, List<int> a, List<string> b)
+        {
+            int maxValue = a.Max();
+            int indexOfMaxValue = a.IndexOf(maxValue);
+            string firstOperator = b[indexOfMaxValue];
+            if (firstOperator == "*")
+            {
+                if (k % maxValue == 0)
+                {
+                    s = (int)(k / maxValue) - 1;
+                }
+                else
+                {
+                    s = (int)Math.Ceiling(k / (double)maxValue) - 1;
+                }
+                for(int i = 0; i < 3; i++)
+                {
+                    if (i != indexOfMaxValue)
+                    {
+                        newA.Add(a[i]);
+                        newB.Add(b[i]);
+                    }
+                }
+                if (b[0] == "*")
+                {
+                    s1 = (int)Math.Floor((double)s / (double)a[0]);
+                }
+                else
+                {
+                    s1 = s - a[0];
+                }
+                if(b[1] == "*")
+                {
+                    s2 = (int)Math.Floor((double)s / (double)a[1]);
+                }
+                else
+                {
+                    s2 = s - a[1];
+                }
 
-        //        s = (int)(k - maxValue) - 1;
-        //    }
-        //}
+            }
+            else
+            {
 
-        
+                s = (int)(k - maxValue) - 1;
+            }
+        }
+
+
         public void ShowStrategy(int n, int m, double l)
         {
             if (s != 0)
