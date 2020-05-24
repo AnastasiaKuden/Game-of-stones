@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C# проекты\\Game of stones\\Game of stones\\Game of stones.csproj": {}
+    "D:\\C# проекты\\Game-of-stones\\Game of stones\\Game of stones.csproj": {}
   },
   "projects": {
-    "D:\\C# проекты\\Game of stones\\Game of stones\\Game of stones.csproj": {
+    "D:\\C# проекты\\Game-of-stones\\Game of stones\\Game of stones.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C# проекты\\Game of stones\\Game of stones\\Game of stones.csproj",
+        "projectUniqueName": "D:\\C# проекты\\Game-of-stones\\Game of stones\\Game of stones.csproj",
         "projectName": "Game of stones",
-        "projectPath": "D:\\C# проекты\\Game of stones\\Game of stones\\Game of stones.csproj",
+        "projectPath": "D:\\C# проекты\\Game-of-stones\\Game of stones\\Game of stones.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "D:\\C# проекты\\Game of stones\\Game of stones\\obj\\",
+        "outputPath": "D:\\C# проекты\\Game-of-stones\\Game of stones\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

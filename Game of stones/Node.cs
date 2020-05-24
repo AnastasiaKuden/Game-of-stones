@@ -37,10 +37,19 @@ namespace Game_of_stones
             return newnode;
         }
 
-        public void CreateBranchesOfTurns(List<int> stones, double k, int[] a, string[] b)
+        public void CreateBranchesOfTurns(List<int> stones, int k, int[] a, string[] b)
         {
             foreach(int numberOfStones in stones)
-            { 
+            {
+                
+                Node nN = CreateNewNode(numberOfStones);
+
+                if (numberOfStones >= k)
+                {
+
+                    continue;
+                }                
+
                 if (b[0] == "+")
                 {
                     var1 = numberOfStones + a[0];
@@ -64,14 +73,9 @@ namespace Game_of_stones
                 else
                 {
                     var3 = numberOfStones * a[2];
-                }
-                          
-                List<int> newNumberOfStones = CreateNewListOfStones(var1, var2, var3);
-                Node nN = CreateNewNode(numberOfStones);
-                if (numberOfStones >= (int)k)
-                {                   
-                    continue;
                 }                
+
+                List<int> newNumberOfStones = CreateNewListOfStones(var1, var2, var3);                
                 nN.CreateBranchesOfTurns(newNumberOfStones, k, a, b);                              
             }            
         }
@@ -91,12 +95,11 @@ namespace Game_of_stones
                 {
                     UnnecessaryS.listOfS.Add(values[0]);                                      
                 }
-                else if (values.Count == 3)
-                {
-                    UnnecessaryS.listOfS2.Add(values[1]);
-                }
-            }
-            
+                //else if (values.Count == 3)
+                //{
+                //    UnnecessaryS.listOfS2.Add(values[1]);
+                //}
+            }            
         }
 
         public void ShowSAndStrategy()
@@ -110,10 +113,16 @@ namespace Game_of_stones
             }
             else
             {
-                if (values.Count == 3 && !UnnecessaryS.listOfS.Contains(values[0])) //&& !UnnecessaryS.listOfS2.Contains(values[1]))
+                //if (values.Count == 4 && !UnnecessaryS.listOfS.Contains(values[0]) && !UnnecessaryS.listOfS2.Contains(values[1]))
+                //{
+                //    foreach (int s in values)
+                //    {
+                //        Console.Write(s + " ");
+                //    }
+                //    Console.WriteLine();
+                //}
+                if (values.Count == 3 && !UnnecessaryS.listOfS.Contains(values[0]))
                 {
-                    if (values[1] != )
-
                     foreach (int s in values)
                     {
                         Console.Write(s + " ");

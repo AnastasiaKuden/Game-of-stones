@@ -4649,11 +4649,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C# проекты\\Game of stones\\TestsForGameOfStones\\TestsForGameOfStones.csproj",
+      "projectUniqueName": "D:\\C# проекты\\Game-of-stones\\TestsForGameOfStones\\TestsForGameOfStones.csproj",
       "projectName": "TestsForGameOfStones",
-      "projectPath": "D:\\C# проекты\\Game of stones\\TestsForGameOfStones\\TestsForGameOfStones.csproj",
+      "projectPath": "D:\\C# проекты\\Game-of-stones\\TestsForGameOfStones\\TestsForGameOfStones.csproj",
       "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-      "outputPath": "D:\\C# проекты\\Game of stones\\TestsForGameOfStones\\obj\\",
+      "outputPath": "D:\\C# проекты\\Game-of-stones\\TestsForGameOfStones\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4669,8 +4669,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\C# проекты\\Game of stones\\Game of stones\\Game of stones.csproj": {
-              "projectPath": "D:\\C# проекты\\Game of stones\\Game of stones\\Game of stones.csproj"
+            "D:\\C# проекты\\Game-of-stones\\Game of stones\\Game of stones.csproj": {
+              "projectPath": "D:\\C# проекты\\Game-of-stones\\Game of stones\\Game of stones.csproj"
             }
           }
         }
@@ -4712,7 +4712,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

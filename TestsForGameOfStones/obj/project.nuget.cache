@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/BKVyNMgZO0lNBG/Tpskm1AtT2Hk/FRZqp6ravZD5mrDp1OUwoyxMn3V+FI0v0one7rKb3N4aRYQ7j0o049akg==",
+  "dgSpecHash": "yTcCxhZ374gtm8Xa1te7l5XhTQEp4f4JC+rDvSlzcxzVEBrRpjDGfSWT35GdrMzVHuR9X3Ke5TQexgyIb76CMQ==",
   "success": true,
-  "projectFilePath": "D:\\C# проекты\\Game of stones\\TestsForGameOfStones\\TestsForGameOfStones.csproj",
+  "projectFilePath": "D:\\C# проекты\\Game-of-stones\\TestsForGameOfStones\\TestsForGameOfStones.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.codecoverage\\16.4.0\\microsoft.codecoverage.16.4.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",

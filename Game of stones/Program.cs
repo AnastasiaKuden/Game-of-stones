@@ -20,12 +20,12 @@ namespace Game_of_stones
             Console.WriteLine("");
             Console.WriteLine("Введи свои условия и программа покажет: ");
             Console.WriteLine("1. Значения S (начальное число камней в куче), при которых у Пети есть выигрышная стратегия, причем Петя должен выиграть только за второй ход (независимо от того, как будет ходить Ваня), и выигрышную стратегию для этого значения S.");
-            Console.WriteLine("2. Значение S, при котором у Вани есть выиграшная стратегия, позволяющая ему выиграть первым или вторым ходом при любой игре Пети, и саму стратегию.");
-            Console.WriteLine("3. Значение S, при котором, у Вани нет стратегии, которая позволит ему гарантированно выиграть первым ходом.");
+            //Console.WriteLine("2. Значение S, при котором у Вани есть выиграшная стратегия, позволяющая ему выиграть первым или вторым ходом при любой игре Пети, и саму стратегию.");
+            //Console.WriteLine("3. Значение S, при котором, у Вани нет стратегии, которая позволит ему гарантированно выиграть первым ходом.");
             Console.WriteLine("");
             Console.WriteLine("Условия:");
             Console.Write("Количество камней для победы (<k>) = ");
-            double k = Convert.ToDouble(Console.ReadLine());
+            int k = Convert.ToInt32(Console.ReadLine());
 
             String pattern = @"([+*])+(\d+)";
 
@@ -76,13 +76,14 @@ namespace Game_of_stones
            
             Console.WriteLine("");
             Console.WriteLine("Решение: ");
-            FirstTask f = new FirstTask();
+            //FirstTask f = new FirstTask();
             //f.FindS(k, a, b);
             //f.ShowStrategy(n, m, l);
             UnnecessaryS.listOfS = new List<int>();
             UnnecessaryS.listOfS2 = new List<int>();
             SecondTask s = new SecondTask();
             s.CreateGraph(k, a, b);
+            s.ShowResult();
         }
     }
 }
