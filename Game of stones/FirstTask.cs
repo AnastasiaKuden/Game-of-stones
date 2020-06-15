@@ -69,11 +69,7 @@ namespace Game_of_stones
             Console.WriteLine("2. Возможные стратегии Пети: ");
             Console.WriteLine("   Петин первый ход: ");
             Strategies s = new Strategies();
-            s.FindPetyaFirstTurn(value, a, b);
-            //for (int i = 0; i < ListOfTurns.listOfS.Count; i++)
-            //{
-            //    Console.WriteLine($"{ListOfTurns.listOfS[i]} + {ListOfTurns.listOfPetyaFirst[i]} + {ListOfTurns.listOfVasyaFirst[i]} + {ListOfTurns.listOfPetyaSecond[i]}");
-            //}
+            s.FindPetyaFirstTurn(value, a, b);            
         }
     }
 }
