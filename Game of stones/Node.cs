@@ -77,33 +77,7 @@ namespace Game_of_stones
                 nN.CreateBranchesOfTurns(newNumberOfStones, k, a, b);                              
             }            
         }
-
-        public void Show()
-        {
-            if (nextNumber.Count != 0)
-            {
-                foreach (Node n in nextNumber)
-                {                    
-                    n.Show();                      
-                }
-            }
-            else
-            {
-                if (values.Count == 2)
-                {
-                    UnnecessaryS.listOfS.Add(values[0]);                                      
-                }
-                else if (values.Count == 3)
-                {
-                    UnnecessaryS.listOfS2.Add(values[1]);
-                }
-                //else if (values.Count > 4)
-                //{
-                //    UnnecessaryS.listOfS.Add(values[0]);
-                //}
-            }            
-        }
-
+        
         public void ShowSAndStrategy(int val)
         {
             if (nextNumber.Count != 0)
@@ -117,21 +91,23 @@ namespace Game_of_stones
             {
                 if (values.Count == 4 && values[1] == val)
                 {
-                    foreach (int s in values)
+                    if (!ListOfTurns.listOfSForWin.Contains(values[0]))
                     {
-                        Console.Write(s + " ");
+                        ListOfTurns.listOfSForWin.Add(values[0]);
                     }
-                    Console.WriteLine();
-                }
-                //if (values.Count == 4 && !UnnecessaryS.listOfS.Contains(values[0]) && !UnnecessaryS.listOfS2.Contains(values[1]))
-                //{
-                //    foreach (int s in values)
-                //    {
-                //        Console.Write(s + " ");
-                //    }
-                //    Console.WriteLine();
-                //}
 
+                    ListOfTurns.listOfS.Add(values[0]);
+                    ListOfTurns.listOfPetyaFirst.Add(values[1]);
+                    ListOfTurns.listOfVasyaFirst.Add(values[2]);
+                    ListOfTurns.listOfPetyaSecond.Add(values[3]);
+                                        
+                    //foreach (int s in values)
+                    //{
+                        
+                    //    Console.Write(s + " ");
+                    //}
+                    //Console.WriteLine();
+                }                
             }
         }
     }
