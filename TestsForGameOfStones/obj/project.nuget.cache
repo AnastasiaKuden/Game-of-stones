@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yTcCxhZ374gtm8Xa1te7l5XhTQEp4f4JC+rDvSlzcxzVEBrRpjDGfSWT35GdrMzVHuR9X3Ke5TQexgyIb76CMQ==",
+  "dgSpecHash": "vhLk5gZMljJVbpjeOg2/+uG9e0tox1szi6OW4+jH4/UQ3kOLg8SFH7Jw6VX4jktwHN//MDDlHgO4pqhkX8Ct4Q==",
   "success": true,
   "projectFilePath": "D:\\C# проекты\\Game-of-stones\\TestsForGameOfStones\\TestsForGameOfStones.csproj",
   "expectedPackageFiles": [
@@ -66,7 +66,8 @@
     "C:\\Users\\hp\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
-    "C:\\Users\\hp\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.3.0\\system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\hp\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.3.0\\system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],
   "logs": []
 }

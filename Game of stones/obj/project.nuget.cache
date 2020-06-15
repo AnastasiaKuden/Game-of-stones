@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KN+V9GBO9qy2k5dUOE2PJHElRXRifS9DSu/tyOO4WVhAKZePrZYcTXe9Now1ZIrazTYXs1ditx1eY1Ijc7ys9w==",
+  "dgSpecHash": "Mit4F1turiYTlvExIr67+e9L43qb0Lz6soOiav6S4/fKxgO9HP7VJYhe1cBZarDJ+EctUfR4gqFDOSe70hjXLg==",
   "success": true,
   "projectFilePath": "D:\\C# проекты\\Game-of-stones\\Game of stones\\Game of stones.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
   "logs": []
 }

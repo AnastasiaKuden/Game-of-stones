@@ -5,7 +5,7 @@ namespace TestsForGameOfStones
 {
     public class Tests
     {
-        FirstTask actual = new FirstTask();
+        Second actual = new Second();
 
         [TestCase(40, 1, 2, 2, ExpectedResult = new int[] {18, 17})]
         [TestCase(24, 1, 2, 2, ExpectedResult = new int[] {10, 9})]
