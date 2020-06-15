@@ -7,16 +7,16 @@ namespace Game_of_stones
     {
         static void Main(string[] args)
         {
-            int n = 0;
-            int m = 0;
-            int l = 0;
-            string nO = "+";
-            string mO = "+";
-            string lO = "+";
+            int firstNumber = 0;
+            int secondNumber = 0;
+            int thirdNumber = 0;
+            string firstO = "+";
+            string secondO = "+";
+            string thirdO = "+";
             //List<int> a = new List<int>();
             //List<string> b = new List<string>();
 
-            Console.WriteLine("Задача: Два игрока, Петя и Ваня, играют в следующую игру. Перед игроками лежит куча камней. Игроки ходят по очереди, первый ход делает Петя. За один ход игрок может добавить в кучу разное количество камней или увеличить кучу в некое количество раз (3 варианта): <n>, <m>, <l>. У каждого игрока есть необходимое количество камней, чтобы делать ходы. Игра завершается, когда количество камней в куче становится не менее <k>. Победителем считается игрок, сделавший последний ход, то есть первым получивший кучу, в которой будет <k> или больше камней. В начальный момент в куче было S камней (от одного, включительно, и меньше <k>).");
+            Console.WriteLine("Задача: Два игрока, Петя и Ваня, играют в следующую игру. Перед игроками лежит куча камней. Игроки ходят по очереди, первый ход делает Петя. За один ход игрок может добавить в кучу разное количество камней или увеличить кучу в некое количество раз (3 варианта): <firstNumber>, <secondNumber>, <thirdNumber>. У каждого игрока есть необходимое количество камней, чтобы делать ходы. Игра завершается, когда количество камней в куче становится не менее <k>. Победителем считается игрок, сделавший последний ход, то есть первым получивший кучу, в которой будет <k> или больше камней. В начальный момент в куче было S камней (от одного, включительно, и меньше <k>).");
             Console.WriteLine("");
             Console.WriteLine("Введи свои условия и программа покажет: ");
             Console.WriteLine("1. Значения S (начальное число камней в куче), при которых у Пети есть выигрышная стратегия, причем Петя должен выиграть только за второй ход (независимо от того, как будет ходить Ваня), и выигрышную стратегию для этого значения S.");
@@ -25,65 +25,66 @@ namespace Game_of_stones
             Console.WriteLine("");
             Console.WriteLine("Условия:");
             Console.Write("Количество камней для победы (<k>) = ");
-            int k = Convert.ToInt32(Console.ReadLine());
+            int sum = Convert.ToInt32(Console.ReadLine());
 
             String pattern = @"([+*])+(\d+)";
 
-            Console.Write("1 вариант увеличения кучи (<n>): ");
+            Console.Write("1 вариант увеличения кучи (<firstNumber>): ");
             string firstvar = Console.ReadLine();
             foreach (var expression in firstvar)
             {
                 foreach (System.Text.RegularExpressions.Match r in
                 System.Text.RegularExpressions.Regex.Matches(firstvar, pattern))
                 {
-                    n = Int32.Parse(r.Groups[2].Value);
+                    firstNumber = Int32.Parse(r.Groups[2].Value);
                     //a.Add(n);
-                    nO = r.Groups[1].Value;
+                    firstO = r.Groups[1].Value;
                     //b.Add(nO);
                 }
             }
 
-            Console.Write("2 вариант увеличения кучи (<m>): ");
+            Console.Write("2 вариант увеличения кучи (<secondNumber>): ");
             string secondvar = Console.ReadLine();
             foreach (var expression in firstvar)
             {
                 foreach (System.Text.RegularExpressions.Match r in
                 System.Text.RegularExpressions.Regex.Matches(secondvar, pattern))
                 {
-                    m = Int32.Parse(r.Groups[2].Value);
+                    secondNumber = Int32.Parse(r.Groups[2].Value);
                     //a.Add(m);
-                    mO = r.Groups[1].Value;
+                    secondO = r.Groups[1].Value;
                     //b.Add(mO);
                 }
             }
 
-            Console.Write("3 вариант увеличения кучи (<l>): ");
+            Console.Write("3 вариант увеличения кучи (<thirdNumber>): ");
             string thirdvar = Console.ReadLine();
             foreach (var expression in thirdvar)
             {
                 foreach (System.Text.RegularExpressions.Match r in
                 System.Text.RegularExpressions.Regex.Matches(thirdvar, pattern))
                 {
-                    l = Int32.Parse(r.Groups[2].Value);
+                    thirdNumber = Int32.Parse(r.Groups[2].Value);
                     //a.Add(l);
-                    lO = r.Groups[1].Value;
+                    thirdO = r.Groups[1].Value;
                     //b.Add(lO);
                 }
             }
 
-            int[] a = new int[3] { n, m, l };
-            string[] b = new string[3] { nO, mO, lO };
+            int[] a = new int[3] { firstNumber, secondNumber, thirdNumber };
+            string[] b = new string[3] { firstO, secondO, thirdO };
            
             Console.WriteLine("");
             Console.WriteLine("Решение: ");
-            //FirstTask f = new FirstTask();
+            FirstTask f = new FirstTask();
+            f.CreateGraph(sum, a, b);
             //f.FindS(k, a, b);
             //f.ShowStrategy(n, m, l);
             UnnecessaryS.listOfS = new List<int>();
             UnnecessaryS.listOfS2 = new List<int>();
-            SecondTask s = new SecondTask();
-            s.CreateGraph(k, a, b);
-            s.ShowResult();
+            //SecondTask s = new SecondTask();
+            //s.CreateGraph(sum, a, b);
+            f.ShowResult(sum, a, b);
         }
     }
 }

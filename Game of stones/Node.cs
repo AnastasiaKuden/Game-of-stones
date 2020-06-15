@@ -40,13 +40,11 @@ namespace Game_of_stones
         public void CreateBranchesOfTurns(List<int> stones, int k, int[] a, string[] b)
         {
             foreach(int numberOfStones in stones)
-            {
-                
+            {                
                 Node nN = CreateNewNode(numberOfStones);
 
-                if (numberOfStones >= k)
+                if (numberOfStones >= k || values.Count == 4)
                 {
-
                     continue;
                 }                
 
@@ -95,24 +93,36 @@ namespace Game_of_stones
                 {
                     UnnecessaryS.listOfS.Add(values[0]);                                      
                 }
-                //else if (values.Count == 3)
+                else if (values.Count == 3)
+                {
+                    UnnecessaryS.listOfS2.Add(values[1]);
+                }
+                //else if (values.Count > 4)
                 //{
-                //    UnnecessaryS.listOfS2.Add(values[1]);
+                //    UnnecessaryS.listOfS.Add(values[0]);
                 //}
             }            
         }
 
-        public void ShowSAndStrategy()
+        public void ShowSAndStrategy(int val)
         {
             if (nextNumber.Count != 0)
             {
                 foreach (Node n in nextNumber)
                 {
-                    n.ShowSAndStrategy();
+                    n.ShowSAndStrategy(val);
                 }
             }
             else
             {
+                if (values.Count == 4 && values[1] == val)
+                {
+                    foreach (int s in values)
+                    {
+                        Console.Write(s + " ");
+                    }
+                    Console.WriteLine();
+                }
                 //if (values.Count == 4 && !UnnecessaryS.listOfS.Contains(values[0]) && !UnnecessaryS.listOfS2.Contains(values[1]))
                 //{
                 //    foreach (int s in values)
@@ -121,14 +131,7 @@ namespace Game_of_stones
                 //    }
                 //    Console.WriteLine();
                 //}
-                if (values.Count == 3 && !UnnecessaryS.listOfS.Contains(values[0]))
-                {
-                    foreach (int s in values)
-                    {
-                        Console.Write(s + " ");
-                    }
-                    Console.WriteLine();
-                }
+
             }
         }
     }

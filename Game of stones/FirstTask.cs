@@ -1,98 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 
 namespace Game_of_stones
 {
     public class FirstTask
     {
-        int s;
-        int s1;
-        int s2;
-        int[] a;
-        List<int> newA = new List<int>();
-        List<string> newB = new List<string>();
+        Node start;
+        List<int> stones;       
 
         public FirstTask()
+        {
+            start = new Node();
+            stones = new List<int>();            
+        }
+
+        public void CreateGraph(int k, int[] a, string[] b)
         {            
+            for(int i = 1; i < k - 1; i++)
+            {
+                stones.Add(i);
+            }
+            start.CreateBranchesOfTurns(stones, k, a, b);            
         }
 
-        public void FindS(double k, List<int> a, List<string> b)
+        public void ShowResult(int k, int[] a, string[] b)
         {
-            int maxValue = a.Max();
-            int indexOfMaxValue = a.IndexOf(maxValue);
-            string firstOperator = b[indexOfMaxValue];
-            if (firstOperator == "*")
+            int var1, var2, var3;
+            if (b[0] == "+")
             {
-                if (k % maxValue == 0)
-                {
-                    s = (int)(k / maxValue) - 1;
-                }
-                else
-                {
-                    s = (int)Math.Ceiling(k / (double)maxValue) - 1;
-                }
-                for(int i = 0; i < 3; i++)
-                {
-                    if (i != indexOfMaxValue)
-                    {
-                        newA.Add(a[i]);
-                        newB.Add(b[i]);
-                    }
-                }
-                if (b[0] == "*")
-                {
-                    s1 = (int)Math.Floor((double)s / (double)a[0]);
-                }
-                else
-                {
-                    s1 = s - a[0];
-                }
-                if(b[1] == "*")
-                {
-                    s2 = (int)Math.Floor((double)s / (double)a[1]);
-                }
-                else
-                {
-                    s2 = s - a[1];
-                }
-
+                var1 = k - a[0];
             }
             else
             {
-
-                s = (int)(k - maxValue) - 1;
+                var1 = (int)Math.Ceiling(k / (double)a[0]);
             }
-        }
-
-
-        public void ShowStrategy(int n, int m, double l)
-        {
-            if (s != 0)
+            if (b[1] == "+")
             {
-                Console.WriteLine($"1) S1 = {s1}, стратегия: в свой первый ход Петя добавляет камушки в количестве = {n}, во второй ход увеличивает количество в {l} раз(а)");
-                Console.WriteLine($"   S2 = {s2}, стратегия: в свой первый ход Петя добавляет камушки в количестве = {m}, во второй ход увеличивает количество в {l} раз(а)");
+                var2 = k - a[1];
             }
             else
             {
-                Console.WriteLine("Введены неправильные значения!");
+                var2 = (int)Math.Ceiling(k / (double)a[1]);
             }
-        }
-
-        public int[] DoArrayWithS()
-        {
-            if (s != 0)
+            if (b[2] == "+")
             {
-                a = new int[2] { s1, s2 };
-                return a;
+                var3 = k - a[2];
             }
             else
             {
-                a = new int[0];
-                return a;
+                var3 = (int)Math.Ceiling(k / (double)a[2]);
             }
+            int var4 = Math.Min(var1, var2);
+            int var = Math.Min(var4, var3);
+            int val = var - 1;
+            start.Show();
+            start.ShowSAndStrategy(val);
         }
     }
 }
