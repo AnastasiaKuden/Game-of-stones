@@ -59,7 +59,7 @@ namespace Game_of_stones
         public void ShowResult(int k, int[] a, string[] b)
         {
             int value = FindBadNumber(k, a, b);            
-            start.ShowSAndStrategy(value);
+            start.CreateListsOfStoneNumber(value);
             Console.Write("1. Значения S, при которых Петя не сможет выиграть в свой первый ход, но 100% выиграет во второй: ");
             foreach (int val in ListOfTurns.listOfSForWin)
             {
@@ -69,7 +69,11 @@ namespace Game_of_stones
             Console.WriteLine("2. Возможные стратегии Пети: ");
             Console.WriteLine("   Петин первый ход: ");
             Strategies s = new Strategies();
-            s.FindPetyaFirstTurn(value, a, b);            
+            s.ShowPetyaFirstTurn(value, a, b);
+            Console.WriteLine("   Васин первый ход: ");
+            s.ShowVanyaFirstTurn(value, a, b);
+            Console.WriteLine("   Петин последний ход: ");
+            s.ShowPetyaSecondTurn(k, a, b);
         }
     }
 }
