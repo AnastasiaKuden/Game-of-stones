@@ -78,13 +78,13 @@ namespace Game_of_stones
             }            
         }
         
-        public void ShowSAndStrategy(int val)
+        public void CreateListsOfStoneNumber(int val)
         {
             if (nextNumber.Count != 0)
             {
                 foreach (Node n in nextNumber)
                 {
-                    n.ShowSAndStrategy(val);
+                    n.CreateListsOfStoneNumber(val);
                 }
             }
             else
@@ -96,17 +96,10 @@ namespace Game_of_stones
                         ListOfTurns.listOfSForWin.Add(values[0]);
                     }
 
-                    ListOfTurns.listOfS.Add(values[0]);
-                    ListOfTurns.listOfPetyaFirst.Add(values[1]);
-                    ListOfTurns.listOfVasyaFirst.Add(values[2]);
-                    ListOfTurns.listOfPetyaSecond.Add(values[3]);
-                                        
-                    //foreach (int s in values)
-                    //{
-                        
-                    //    Console.Write(s + " ");
-                    //}
-                    //Console.WriteLine();
+                    if (!ListOfTurns.listOfVasyaFirst.Contains(values[2]))
+                    {
+                        ListOfTurns.listOfVasyaFirst.Add(values[2]);
+                    }                    
                 }                
             }
         }
