@@ -22,5 +22,21 @@ namespace Game_of_stones.Exceptions
                 throw new CheckFinishNumberException("Количество камней для победы не может быть меньше 1ого. Попробуйте снова: ");
             }
         }
+
+        static public void CheckVariant(string firstvar, string secondvar)
+        {
+            if (firstvar == secondvar)
+            {
+                throw new CheckVariantException("Такой вариант уже есть. Попробуйте снова: ");
+            }
+        }
+
+        static public void CheckVariant(string firstvar, string secondvar, string thirdvar)
+        {
+            if (thirdvar == firstvar || thirdvar == secondvar)
+            {
+                throw new CheckVariantException("Такой вариант уже есть. Попробуйте снова: ");
+            }
+        }
     }
 }
