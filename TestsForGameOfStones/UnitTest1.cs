@@ -1,22 +1,39 @@
 using NUnit.Framework;
 using Game_of_stones;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace TestsForGameOfStones
 {
     public class Tests
     {
-        Second actual = new Second();
+        FirstTask actual = new FirstTask();       
 
-        [TestCase(40, 1, 2, 2, ExpectedResult = new int[] {18, 17})]
-        [TestCase(24, 1, 2, 2, ExpectedResult = new int[] {10, 9})]
-        [TestCase(42, 1, 5, 3, ExpectedResult = new int[] {12, 8})]
-        [TestCase(0, 0, 0, 0, ExpectedResult = new int[] {})]
-        [TestCase(0, 1, 0, 1, ExpectedResult = new int[] {})]
-        [TestCase(80, 3, 6, 7, ExpectedResult = new int[] {8, 5})]
-        public int[] TestFindS(double k, int n, int m, double l)
+        [TestCase(24, new int[] {1, 2, 2}, new string[] {"+", "+", "*"}, ExpectedResult = 11)]
+        [TestCase(44, new int[] {1, 2, 2}, new string[] {"+", "+", "*"}, ExpectedResult = 21)]
+        [TestCase(42, new int[] {1, 5, 3}, new string[] {"+", "+", "*"}, ExpectedResult = 13)]        
+        public int FindBadNumberTest(int k, int[] a, string[] b)
         {            
-            actual.FindS(k, n, m, l);
-            return actual.DoArrayWithS();
+            return actual.FindBadNumber(k, a, b);            
+        }
+
+
+        [TestCase(24, new int[] { 1, 2, 2 }, new string[] { "+", "+", "*" }, ExpectedResult = new int[] { 9, 10})]
+        [TestCase(44, new int[] { 1, 2, 2 }, new string[] { "+", "+", "*" }, ExpectedResult = new int[] { 19, 20})]
+        [TestCase(42, new int[] { 1, 5, 3 }, new string[] { "+", "+", "*" }, ExpectedResult = new int[] { 8, 12})]
+        public int[] CreateGraphTest(int k, int[] a, string[] b)
+        {
+            List<int> stone = new List<int>();
+            for (int i = 1; i < k - 1; i++)
+            {
+                stone.Add(i);
+            }
+            ListOfTurns.listOfSForWin = new List<int>();
+            ListOfTurns.listOfVasyaFirst = new List<int>();
+            Node node = new Node();
+            node.CreateBranchesOfTurns(stone, k, a, b);                       
+            node.CreateListsOfStoneNumber(FindBadNumberTest(k, a, b));
+            return ListOfTurns.listOfSForWin.ToArray();
         }
     }
 }

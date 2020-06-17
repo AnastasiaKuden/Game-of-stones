@@ -17,7 +17,7 @@ namespace Game_of_stones
             string secondO = "+";
             string thirdO = "+";            
             string firstvar = "";
-            string secondvar = "";            
+            string secondvar = "";                  
 
             Console.WriteLine("Задача: Два игрока, Петя и Ваcя, играют в следующую игру. Перед игроками лежит куча камней. Игроки ходят по очереди, первый ход делает Петя. За один ход игрок может добавить в кучу разное количество камней или увеличить кучу в некое количество раз (3 варианта). У каждого игрока есть необходимое количество камней, чтобы делать ходы. Игра завершается, когда количество камней в куче становится не менее <k>. Победителем считается игрок, сделавший последний ход, то есть первым получивший кучу, в которой будет <k> или больше камней. В начальный момент в куче было S камней.");
             Console.WriteLine("");
@@ -65,7 +65,7 @@ namespace Game_of_stones
                             firstNumber = Int32.Parse(r.Groups[2].Value);
                             firstO = r.Groups[1].Value;
                         }
-                    }
+                    }                    
                     ClassForExceptions.CheckTheOperatorAndOperand(firstNumber);
                 }
                 catch (CheckTheOperatorAndOperandException ex)
