@@ -8,14 +8,16 @@ namespace Game_of_stones
     {
         static void Main(string[] args)
         {
+            bool isError;
             int sum = 0;
             int firstNumber = 0;
             int secondNumber = 0;
             int thirdNumber = 0;
             string firstO = "+";
             string secondO = "+";
-            string thirdO = "+";
-            bool isError;
+            string thirdO = "+";            
+            string firstvar = "";
+            string secondvar = "";            
 
             Console.WriteLine("Задача: Два игрока, Петя и Ваcя, играют в следующую игру. Перед игроками лежит куча камней. Игроки ходят по очереди, первый ход делает Петя. За один ход игрок может добавить в кучу разное количество камней или увеличить кучу в некое количество раз (3 варианта). У каждого игрока есть необходимое количество камней, чтобы делать ходы. Игра завершается, когда количество камней в куче становится не менее <k>. Победителем считается игрок, сделавший последний ход, то есть первым получивший кучу, в которой будет <k> или больше камней. В начальный момент в куче было S камней.");
             Console.WriteLine("");
@@ -54,7 +56,7 @@ namespace Game_of_stones
                 try
                 {
                     Console.Write("1 вариант увеличения кучи(введи оператор и оперант слитно, например, '+1'): ");
-                    string firstvar = Console.ReadLine();
+                    firstvar = Console.ReadLine();
                     foreach (var expression in firstvar)
                     {
                         foreach (System.Text.RegularExpressions.Match r in
@@ -80,7 +82,7 @@ namespace Game_of_stones
                 try
                 {
                     Console.Write("2 вариант увеличения кучи: ");
-                    string secondvar = Console.ReadLine();
+                    secondvar = Console.ReadLine();
                     foreach (var expression in secondvar)
                     {
                         foreach (System.Text.RegularExpressions.Match r in
@@ -91,8 +93,14 @@ namespace Game_of_stones
                         }
                     }
                     ClassForExceptions.CheckTheOperatorAndOperand(secondNumber);
+                    ClassForExceptions.CheckVariant(firstvar, secondvar);
                 }
                 catch (CheckTheOperatorAndOperandException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    isError = true;
+                }
+                catch(CheckVariantException ex)
                 {
                     Console.WriteLine(ex.Message);
                     isError = true;
@@ -117,8 +125,14 @@ namespace Game_of_stones
                         }
                     }
                     ClassForExceptions.CheckTheOperatorAndOperand(thirdNumber);
+                    ClassForExceptions.CheckVariant(firstvar, secondvar, thirdvar);
                 }
                 catch (CheckTheOperatorAndOperandException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    isError = false;
+                }
+                catch (CheckVariantException ex)
                 {
                     Console.WriteLine(ex.Message);
                     isError = false;
